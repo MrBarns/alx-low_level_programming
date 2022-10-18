@@ -10,9 +10,9 @@
 
 int main(void)
 {
-	int ascii_nums = 48;
+	int ascii_nums;
 
-	for (ascii_nums; ascii_nums <= 57; ascii_nums++)
+	for (ascii_nums = 48; ascii_nums <= 57; ascii_nums++)
 	{
 		putchar(ascii_nums);
 		if (ascii_nums < 57)
@@ -25,4 +25,3 @@ int main(void)
 
 	return (0);
 }
-
