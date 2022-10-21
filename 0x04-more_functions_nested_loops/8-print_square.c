@@ -10,25 +10,21 @@
 
 void print_square(int size)
 {
-	if (size <= 0)
+	if (size < 1)
 	{
 		_putchar('\n');
-		goto end;
-	}
-
-	int c1 = size;
-
-	while (c1 > 0)
+	} else
 	{
-		int c2 = size;
+		int counter;
 
-		while (c2 > 0)
+		for (counter = 0; counter < size; counter++)
 		{
-			_putchar('#');
-			c2--;
+			int hashtag;
+
+			for (hashtag = size; hashtag > 0; hashtag--)
+				_putchar('#');
+
+			_putchar('\n');
 		}
-		_putchar('\n');
-		c1--;
 	}
-end:;
 }

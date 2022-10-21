@@ -21,19 +21,15 @@ void print_triangle(int size)
 		while (counter <= size)
 		{
 			int hash;
-			int space = size - counter;
+			int space;
 
-			while (space > 0)
-			{
+			for (space = size - counter; space > 0; space--)
 				_putchar(' ');
-				space--;
-			}
-
 			for (hash = counter; hash > 0; hash--)
 				_putchar('#');
 
 			_putchar('\n');
-			counter++;
+			counter--;
 		}
 	}
 
