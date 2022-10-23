@@ -8,7 +8,7 @@
  * Return: day of year
  */
 
-int convert_day(int0 month, int day)
+int convert_day(int month, int day)
 {
 	switch (month)
 	{
