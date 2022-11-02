@@ -17,6 +17,7 @@ void print_rev(char *s)
 	{
 		c++;
 	}
+	c--;
 
 	/* Print from last to first */
 	while (!(c < 0))

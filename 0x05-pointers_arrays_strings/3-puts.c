@@ -18,5 +18,4 @@ void _puts(char *str)
 		c++;
 	}
 	_putchar('\n');
-	return;
 }
