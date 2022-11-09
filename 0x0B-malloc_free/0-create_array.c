@@ -25,6 +25,12 @@ char *create_array(unsigned int size, char c)
 
 		chr = malloc(sizeof(c) * size);
 
+		if (chr == NULL)
+		{
+			free(chr);
+			return (NULL);
+		}
+
 		for (x = 0; x < size; x++)
 		{
 			chr[x] = c;

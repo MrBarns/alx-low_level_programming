@@ -14,31 +14,23 @@
 
 int **alloc_grid(int width, int height)
 {
-	/* Variable declarations */
 	int **arr;
-	int x;
-	int y;
+	int x, y;
 
-	/* First error handling */
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	/* Allocate space for array of pointers */
 	arr = malloc(sizeof(int *) * height);
 
-	/* Error handling */
 	if (arr == NULL)
 	{
 		free(arr);
 		return (NULL);
 	}
 
-	/* Allocate space for arrays in array */
 	for (x = 0; x < height; x++)
 	{
 		arr[x] = malloc(sizeof(int) * width);
-
-		/* Error handling */
 		if (arr[x] == NULL)
 		{
 			for (x--; x >= 0; x--)
@@ -53,6 +45,5 @@ int **alloc_grid(int width, int height)
 		for (y = 0; y < width; y++)
 			arr[x][y] = 0;
 	}
-
 	return (arr);
 }

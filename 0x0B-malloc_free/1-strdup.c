@@ -23,8 +23,15 @@ char *_strdup(char *str)
 
 		while (str[len] != '\0')
 			len++;
+		len++;
 
 		cpy = malloc(sizeof(char) * len);
+
+		if (cpy == NULL)
+		{
+			free(cpy);
+			return (NULL);
+		}
 
 		for (x = 0; x < len; x++)
 			cpy[x] = str[x];
