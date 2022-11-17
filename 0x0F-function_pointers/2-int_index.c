@@ -14,15 +14,18 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	signed int found = -1, index;
 
-	if (size <= 0)
-		goto end;
-
-	for (index = 0; index < size; index++)
+	if (array && cmp)
 	{
-		if (cmp(array[index]) != 0)
-		{
-			found = index;
+		if (size <= 0)
 			goto end;
+
+		for (index = 0; index < size; index++)
+		{
+			if (cmp(array[index]) != 0)
+			{
+				found = index;
+				goto end;
+			}
 		}
 	}
 end:;
