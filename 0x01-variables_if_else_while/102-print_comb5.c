@@ -34,7 +34,7 @@ while (a < 58)
 					putchar(x);
 					putchar(y);
 
-					if (!(n1 == 98 && n2 == 99))
+					if (n1 == 98 && n2 == 99)
 						break;
 					putchar(',');
 					putchar(' ');
