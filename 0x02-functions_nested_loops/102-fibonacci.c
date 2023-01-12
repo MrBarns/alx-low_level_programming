@@ -13,7 +13,7 @@ int main(void)
 	prev2 = 1;
 	prev1 = fibb = 1;
 	putchar('1');
-	for (count = 0; count < 50; count++)
+	for (count = 1; count < 50; count++)
 	{
 		fibb = prev1 + prev2;
 
