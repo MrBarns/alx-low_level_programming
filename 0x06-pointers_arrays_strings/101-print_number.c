@@ -19,7 +19,7 @@ void print_number(int n)
 	for (x = n; x >= 10; x /= 10)
 		m *= 10;
 
-	while (n >= 10)
+	while (m >= 10)
 	{
 		_putchar((n / m) + 48);
 
