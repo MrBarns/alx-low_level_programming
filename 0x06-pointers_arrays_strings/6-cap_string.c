@@ -12,7 +12,10 @@ char *cap_string(char *str)
 	int x, y;
 	char sep[] = {9, 10, 32, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	x = 0;
+	if ((*str >= 97) && (*str <= 122))
+		*str -= 32;
+
+	x = 1;
 	for (; *(str + x) != '\0'; x++)
 	{
 		for (y = 0; y < 13; y++)
