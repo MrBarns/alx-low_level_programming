@@ -31,20 +31,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 		;
 	for (o = 0; *(owner + o) != '\0'; o++)
 		;
-
-	new_n = malloc(sizeof(char) * (n + 1));
-	new_o = malloc(sizeof(char) * (o + 1));
+	n++, o++;
+	new_n = malloc(sizeof(char) * n);
+	new_o = malloc(sizeof(char) * o);
 
 	if (new_o == NULL || new_n == NULL)
 	{
 		free(new_n);
 		free(new_o);
+		free(doggy);
 		return (NULL);
 	}
 
 	for (c = 0; c < n; c++)
 		*(new_n + c) = *(name + c);
-
 	for (c = 0; c < o; c++)
 		*(new_o + c) = *(owner + c);
 
