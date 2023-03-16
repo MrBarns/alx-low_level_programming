@@ -19,12 +19,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (c = 0; c < n; c++)
 	{
 		printf("%d", va_arg(vlist, int));
-		if (c == n - 1)
-			separator = "\n";
-
-		if (separator)
+		if (separator && c < n - 1)
 			printf("%s", separator);
 	}
+	printf("\n");
 
 	va_end(vlist);
 }
