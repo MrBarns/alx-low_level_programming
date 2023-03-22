@@ -10,18 +10,17 @@
 void print_all(const char * const format, ...)
 {
 	va_list vlist;
-	unsigned int n = 0, c = 0;
+	unsigned int c = 0;
 	int tis;
 	char *str;
 
-	while (*(format + n) != '\0')
-		n++;
-
 	va_start(vlist, format);
-	while (c < n)
+	tis = 0;
+	while (format && format[c])
 	{
+		if (tis)
+			printf(", ");
 		tis = 1;
-
 		switch (*(format + c))
 		{
 		case 'c':
@@ -35,8 +34,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			str = va_arg(vlist, char *);
-
-			if (!str)
+			if (*str == '\0')
 			{
 				printf("(nil)");
 				break;
@@ -46,9 +44,6 @@ void print_all(const char * const format, ...)
 		default:
 			tis = 0;
 		}
-
-		if (tis && c < n - 1)
-			printf(", ");
 		c++;
 	}
 
