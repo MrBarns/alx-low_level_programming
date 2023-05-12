@@ -13,6 +13,8 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int base10;
 	int count, index, len;
 
+	if (!b)
+		return (0);
 	for (len = 0; b[len] != '\0'; len++)
 	{
 		if (b[len] < 48 || b[len] > 49)
