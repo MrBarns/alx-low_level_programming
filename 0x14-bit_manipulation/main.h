@@ -1,6 +1,8 @@
 #ifndef _MAIN_
 #define _MAIN_
 
+int get_endianness(void);
+
 int _putchar(char c);
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
