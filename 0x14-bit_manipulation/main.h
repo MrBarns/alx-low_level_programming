@@ -3,8 +3,12 @@
 
 int _putchar(char c);
 
+unsigned int power2(int index);
+
 unsigned int binary_to_uint(const char *b);
 
-unsigned int power2(int index);
+void print_binary(unsigned long int n);
+
+
 
 #endif
