@@ -75,7 +75,7 @@ int main(int argc, char **argv)
 	if (fd_to < 0)
 	{
 		close_file(fd_frm);
-		file_err(98, argv[2]);
+		file_err(99, argv[2]);
 	}
 
 	while (len_rd == 1024)
@@ -84,13 +84,13 @@ int main(int argc, char **argv)
 		if (len_rd < 0)
 		{
 			close_file(fd_frm), close_file(fd_to);
-			file_err(97, argv[1]);
+			file_err(98, argv[1]);
 		}
 		len_wr = write(fd_to, buf, len_rd);
 		if (len_wr < 0)
 		{
 			close_file(fd_frm), close_file(fd_to);
-			file_err(98, argv[2]);
+			file_err(99, argv[2]);
 		}
 	}
 
