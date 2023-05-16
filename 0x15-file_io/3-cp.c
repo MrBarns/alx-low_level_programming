@@ -41,7 +41,7 @@ void file_err(int status, char *file)
 		break;
 	case 99:
 		dprintf(STDERR_FILENO
-			, "Error: Can't write to file %s\n", file);
+			, "Error: Can't write to %s\n", file);
 		break;
 	}
 
