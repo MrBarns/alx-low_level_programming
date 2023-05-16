@@ -22,11 +22,11 @@ int create_file(const char *filename, char *text_content)
 	if (fd < 0)
 		return (-1);
 
-	for (; text_content[ind]; ind++)
-		;
-
 	if (!text_content)
 		text_content = "";
+
+	for (; text_content[ind]; ind++)
+		;
 
 	ind = write(fd, text_content, ind);
 	close(fd);
