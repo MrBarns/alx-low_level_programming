@@ -25,9 +25,10 @@ int create_file(const char *filename, char *text_content)
 	for (; text_content[ind]; ind++)
 		;
 
-	if (text_content)
-		ind = write(fd, text_content, ind);
+	if (!text_content)
+		text_content = "";
 
+	ind = write(fd, text_content, ind);
 	close(fd);
 	if (ind < 0)
 		return (-1);
