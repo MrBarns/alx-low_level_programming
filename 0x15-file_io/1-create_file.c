@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 	if (fd < 0)
 		return (-1);
 
-	for (ind; text_content[ind]; ind++)
+	for (; text_content[ind]; ind++)
 		;
 
 	if (text_content)
