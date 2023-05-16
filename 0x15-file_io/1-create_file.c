@@ -13,7 +13,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t ind;
+	ssize_t ind = 0;
 
 	if (!filename)
 		return (-1);
@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 	if (fd < 0)
 		return (-1);
 
-	for (ind = 0; text_content[ind]; ind++)
+	for (ind; text_content[ind]; ind++)
 		;
 
 	if (text_content)
