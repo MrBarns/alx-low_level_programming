@@ -22,17 +22,21 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node);
 		return (NULL);
 	}
-
-	new_str = strdup(str);
-	if (new_str == NULL)
+	if (str)
 	{
-		free(new_str);
-		free(new_node);
-		return (NULL);
-	}
+		new_str = strdup(str);
+		if (new_str == NULL)
+		{
+			free(new_str);
+			free(new_node);
+			return (NULL);
+		}
+	} else
+		new_str = NULL;
 
-	for (len = 0; new_str[len] != '\0'; len++)
-		;
+	if (str)
+		for (len = 0; new_str[len] != '\0'; len++)
+			;
 
 	new_node->str = new_str;
 	new_node->len = len;
@@ -46,6 +50,5 @@ list_t *add_node_end(list_t **head, const char *str)
 			;
 		(*head)->next = new_node;
 	}
-
 	return (new_node);
 }
