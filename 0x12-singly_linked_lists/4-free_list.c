@@ -12,6 +12,12 @@ void free_list(list_t *head)
 {
 	list_t *next;
 
+	if (!head)
+	{
+		free(head);
+		exit(EXIT_SUCCESS);
+	}
+
 	for (; head != NULL; head = next)
 	{
 		next = head->next;
