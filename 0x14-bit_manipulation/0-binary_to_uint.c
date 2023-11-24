@@ -27,9 +27,12 @@ unsigned int binary_to_uint(const char *b)
 	bin_value /= 2;
 	for (ind = 0; b[ind] != '\0'; ind++)
 	{
-		if (b[ind] - '0')
-			dec += bin_value;
-		bin_value /= 2;
+		if (b[ind])
+		{
+			if (b[ind] - '0')
+				dec += bin_value;
+			bin_value /= 2;
+		}
 	}
 
 	return (dec);
